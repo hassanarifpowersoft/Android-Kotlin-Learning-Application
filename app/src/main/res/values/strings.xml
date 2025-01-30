@@ -6,6 +6,7 @@
     <string name="show_Implicit_Intent_button">Show Implicit Intent</string>
     <string name="show_Explicit_Intent_button">Show Explicit Intent</string>
     <string name="show_data_transfer_example_button">Show Data Transfer From One Screen To Other</string>
+    <string name="show_firebase_database_example_button">Show Firebase Example</string>
     <string name="text_view_new_activity">Welcome to New Activity</string>
     <string name="splash_loading_text">Loading...</string>
 </resources>

@@ -15,6 +15,15 @@
         android:theme="@style/Theme.AndroidKotlinLearningApplication"
         tools:targetApi="31">
         <activity
+            android:name=".FirebaseDatabaseUserProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FirebaseDatabaseSignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FirebaseDatabaseLoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".DataReceivedExampleActivity"
             android:exported="false" />
         <activity

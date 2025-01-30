@@ -32,6 +32,14 @@
         android:layout_marginHorizontal="30dp"
         android:text="@string/show_Implicit_Intent_button" />
 
+
+    <Button
+        android:id="@+id/buttonShowDialogue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:text="@string/show_dialogue_button" />
+
     <Button
         android:id="@+id/buttonShowDataTransferExample"
         android:layout_width="match_parent"
@@ -46,11 +54,12 @@
         android:text="@string/show_web_view_button" />
 
     <Button
-        android:id="@+id/buttonShowDialogue"
+        android:id="@+id/buttonShowFireBaseExample"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30dp"
-        android:text="@string/show_dialogue_button" />
+        android:text="@string/show_firebase_database_example_button" />
+
 
 
 
