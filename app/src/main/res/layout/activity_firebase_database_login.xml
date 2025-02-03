@@ -32,26 +32,51 @@
         android:text="User Login Infermation" />
 
 
-    <EditText
-        android:id="@+id/editTextUsername"
+<!--    <EditText-->
+<!--        android:id="@+id/editTextUsername"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="80dp"-->
+<!--        android:layout_marginHorizontal="30dp"-->
+<!--        android:textSize="20sp"-->
+<!--        android:ems="10"-->
+<!--        android:inputType="text"-->
+<!--        android:hint="Username" />-->
+
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
         android:layout_marginHorizontal="30dp"
-        android:textSize="20sp"
-        android:ems="10"
-        android:inputType="text"
-        android:hint="Username" />
+        app:startIconDrawable="@drawable/user">
 
-    <EditText
-        android:id="@+id/editTextPassword"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditTextUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:inputType="text"
+            android:hint="Username" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginHorizontal="30dp"
-        android:textSize="20sp"
-        android:ems="10"
-        android:hint="Password" />
+        app:startIconDrawable="@drawable/lock"
+        app:endIconMode="password_toggle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:inputType="textPassword"
+            android:hint="Password" />
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"

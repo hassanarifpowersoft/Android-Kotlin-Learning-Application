@@ -8,6 +8,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
@@ -15,13 +16,13 @@ class FirebaseDatabaseSignUpActivity : AppCompatActivity() {
 
     lateinit var databaseReference : DatabaseReference
 
-    lateinit var usernameEditText : EditText
-    lateinit var passwordEditText : EditText
-    lateinit var firstNameEditText : EditText
-    lateinit var lastNameEditText : EditText
-    lateinit var emailEditText : EditText
-    lateinit var phoneNumberEditText : EditText
-    lateinit var addressEditText : EditText
+    lateinit var usernameTextInputEditText : TextInputEditText
+    lateinit var passwordTextInputEditText : TextInputEditText
+    lateinit var firstNameTextInputEditText : TextInputEditText
+    lateinit var lastNameTextInputEditText : TextInputEditText
+    lateinit var emailTextInputEditText : TextInputEditText
+    lateinit var phoneNumberTextInputEditText : TextInputEditText
+    lateinit var addressTextInputEditText : TextInputEditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,23 +34,23 @@ class FirebaseDatabaseSignUpActivity : AppCompatActivity() {
             insets
         }
 
-        usernameEditText = findViewById<EditText>(R.id.editTextUsername)
-        passwordEditText = findViewById<EditText>(R.id.editTextPassword)
-        firstNameEditText = findViewById<EditText>(R.id.editTextFirstName)
-        lastNameEditText = findViewById<EditText>(R.id.editTextLastName)
-        emailEditText = findViewById<EditText>(R.id.editTextEmail)
-        phoneNumberEditText = findViewById<EditText>(R.id.editTextPhoneNumber)
-        addressEditText = findViewById<EditText>(R.id.editTextAddress)
+        usernameTextInputEditText = findViewById<TextInputEditText>(R.id.textInputEditTextUsername)
+        passwordTextInputEditText = findViewById<TextInputEditText>(R.id.textInputEditTextPassword)
+        firstNameTextInputEditText = findViewById<TextInputEditText>(R.id.textInputEditTextFirstName)
+        lastNameTextInputEditText = findViewById<TextInputEditText>(R.id.textInputEditTextLastName)
+        emailTextInputEditText = findViewById<TextInputEditText>(R.id.textInputEditTextEmail)
+        phoneNumberTextInputEditText = findViewById<TextInputEditText>(R.id.textInputEditTextPhoneNumber)
+        addressTextInputEditText = findViewById<TextInputEditText>(R.id.textInputEditTextAddress)
 
         val registerButton = findViewById<Button>(R.id.buttonRegister)
         registerButton.setOnClickListener{
-            var username = usernameEditText.text.toString()
-            var password = passwordEditText.text.toString()
-            var firstName = firstNameEditText.text.toString()
-            var lastName = lastNameEditText.text.toString()
-            var email = emailEditText.text.toString()
-            var phoneNumber = phoneNumberEditText.text.toString()
-            var address = addressEditText.text.toString()
+            var username = usernameTextInputEditText.text.toString()
+            var password = passwordTextInputEditText.text.toString()
+            var firstName = firstNameTextInputEditText.text.toString()
+            var lastName = lastNameTextInputEditText.text.toString()
+            var email = emailTextInputEditText.text.toString()
+            var phoneNumber = phoneNumberTextInputEditText.text.toString()
+            var address = addressTextInputEditText.text.toString()
 
             var user = User(username,password,firstName,lastName,email,phoneNumber,address)
             registerUserInFirebaseDatabase(user)
@@ -75,13 +76,13 @@ class FirebaseDatabaseSignUpActivity : AppCompatActivity() {
 
 
     private fun clearAllTextFields(){
-        usernameEditText.text.clear()
-        passwordEditText.text.clear()
-        firstNameEditText.text.clear()
-        lastNameEditText.text.clear()
-        emailEditText.text.clear()
-        phoneNumberEditText.text.clear()
-        addressEditText.text.clear()
+        usernameTextInputEditText.setText("")
+        passwordTextInputEditText.setText("")
+        firstNameTextInputEditText.setText("")
+        lastNameTextInputEditText.setText("")
+        emailTextInputEditText.setText("")
+        phoneNumberTextInputEditText.setText("")
+        addressTextInputEditText.setText("")
     }
 
 

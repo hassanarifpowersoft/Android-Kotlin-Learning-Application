@@ -2,21 +2,27 @@ package com.example.android_kotlin_learning_application
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
-import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
 class FirebaseDatabaseLoginActivity : AppCompatActivity() {
 
     lateinit var databaseReference: DatabaseReference
+
+    lateinit var usernameTextInputEditText : TextInputEditText
+    lateinit var passwordTextInputEditText : TextInputEditText
+
+    companion object{
+        const val KEY_USER_NAME = "USER_NAME"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,8 +34,8 @@ class FirebaseDatabaseLoginActivity : AppCompatActivity() {
             insets
         }
 
-        val usernameEditText = findViewById<EditText>(R.id.editTextUsername)
-        val passwordEditText = findViewById<EditText>(R.id.editTextPassword)
+        usernameTextInputEditText = findViewById<TextInputEditText>(R.id.textInputEditTextUsername)
+        passwordTextInputEditText = findViewById<TextInputEditText>(R.id.textInputEditTextPassword)
 
         val loginButton = findViewById<Button>(R.id.buttonLogin)
         val signuptextView = findViewById<TextView>(R.id.textViewSignUp)
@@ -41,8 +47,8 @@ class FirebaseDatabaseLoginActivity : AppCompatActivity() {
 
 
         loginButton.setOnClickListener{
-            val username = usernameEditText.text.toString()
-            val password = passwordEditText.text.toString()
+            val username = usernameTextInputEditText.text.toString()
+            val password = passwordTextInputEditText.text.toString()
 
             if(username.isNotEmpty()){
                 validateUserFromDatabase(username,password)
@@ -50,7 +56,6 @@ class FirebaseDatabaseLoginActivity : AppCompatActivity() {
                 Toast.makeText(this,"Please enter username and password", Toast.LENGTH_SHORT).show()
             }
         }
-
     }
 
     private fun validateUserFromDatabase(username: String, password: String) {
@@ -59,9 +64,13 @@ class FirebaseDatabaseLoginActivity : AppCompatActivity() {
             if(it.exists()){
                 val user = it.child("username").value
                 val pas = it.child("password").value
+
                 if (username == user && password == pas){
                     val intent = Intent(this, FirebaseDatabaseUserProfileActivity::class.java)
+                    intent.putExtra(KEY_USER_NAME,user)
                     startActivity(intent)
+                    usernameTextInputEditText.setText("")
+                    passwordTextInputEditText.setText("")
                 }else{
                     Toast.makeText(this,"Username or Password is Incorrect", Toast.LENGTH_SHORT).show()
                 }

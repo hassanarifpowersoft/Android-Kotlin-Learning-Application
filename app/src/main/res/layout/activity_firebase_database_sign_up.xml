@@ -15,7 +15,7 @@
         android:id="@+id/textViewTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="30dp"
+        android:layout_marginTop="10dp"
         android:gravity="center"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -30,76 +30,111 @@
         android:textSize="25sp"
         android:text="User Information" />
 
-    <EditText
-        android:id="@+id/editTextUsername"
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:inputType="text"
-        android:hint="Username" />
+        android:layout_marginVertical="4dp"
+        app:startIconDrawable="@drawable/user">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditTextUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:inputType="text"
+            android:hint="Username" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/editTextPassword"
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginVertical="10dp"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:hint="Password"/>
+        android:layout_marginVertical="4dp"
+        app:startIconDrawable="@drawable/lock"
+        app:endIconMode="password_toggle">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:inputType="textPassword"
+            android:hint="Password" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/editTextFirstName"
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginVertical="10dp"
-        android:ems="10"
-        android:inputType="text"
-        android:hint="First Name"/>
+        android:layout_marginVertical="4dp">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditTextFirstName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:inputType="text"
+            android:hint="First Name" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/editTextLastName"
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginVertical="10dp"
-        android:ems="10"
-        android:inputType="text"
-        android:hint="Last Name"/>
+        android:layout_marginVertical="4dp">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditTextLastName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:inputType="text"
+            android:hint="Last Name" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/editTextEmail"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginVertical="10dp"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:hint="Email"/>
+        android:layout_marginVertical="4dp">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditTextEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:inputType="textEmailAddress"
+            android:hint="Email" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/editTextPhoneNumber"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginVertical="10dp"
-        android:ems="10"
-        android:inputType="phone"
-        android:hint="Phone Nubmer"/>
+        android:layout_marginVertical="4dp">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditTextPhoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:inputType="phone"
+            android:hint="Phone Number" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-
-    <EditText
-        android:id="@+id/editTextAddress"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginVertical="10dp"
-        android:ems="10"
-        android:inputType="text"
-        android:hint="Address"/>
+        android:layout_marginVertical="4dp">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditTextAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:inputType="text"
+            android:hint="Address" />
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <Button
         android:id="@+id/buttonRegister"
